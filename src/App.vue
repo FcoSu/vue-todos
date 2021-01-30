@@ -46,26 +46,7 @@ export default {
   data(){
     return {
       todos:[
-        {
-          id: 0,
-          title: 'comprar la cena',
-          completed: false
-        },
-        {
-          id: 1,
-          title: 'Alimentar al perro',
-          completed: true
-        },
-        {
-          id: 2,
-          title: 'Jugar LOL',
-          completed: false
-        },
-        {
-          id: 3,
-          title: 'Terminar tutorial',
-          completed: true
-        }
+        
       ],
       copyTodos:[]
     }

@@ -1,24 +1,6 @@
 # vue-todos
 
-## Project setup
-```
-npm install
-```
+Implementación en Vue.js de una lista de recordatorios TODOS.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Implementation in Vue.js of a TO DO reminder list.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

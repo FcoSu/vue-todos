@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="todo" v-bind:class="{completed: todo.completed}">
         <div class="todo-body">
-            <input type="checkbox">
+            <input type="checkbox" 
+            v-bind:checked="todo.completed? 'cheked': ''"
+            v-on:change="checkTodo">
             {{todo.title}}
         </div>
         
@@ -15,7 +17,12 @@
 
     export default {
         name: "TodoItem",
-        props: ['todo']
+        props: ['todo'],
+        methods:{
+            checkTodo(){
+                this.todo.completed = !this.todo.completed;
+            }
+        }
     }
 
 
@@ -55,7 +62,7 @@
     button{
         border: none;
         border-radius: 3px;
-        padding: 10px;
+        padding: 0 10px;
         background-color: #ccc;
         color: black;
     }

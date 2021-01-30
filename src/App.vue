@@ -3,7 +3,8 @@
     <div id="header"></div>
     <div id="main-container">
       <h2>Todos</h2>
-      <Todos v-bind:todosList="copyTodos"/>
+      <TodoAdd v-on:add-todo="addTodo"/>
+      <Todos v-bind:todosList="copyTodos" v-on:delete-todo="deleteTodo"/>
     </div>
   </div>
 </template>
@@ -11,12 +12,23 @@
 <script>
 //import Search from "./components/Search";
 import Todos from "./components/Todos";
-//import TodoAdd from "./components/TodoAdd";
+import TodoAdd from "./components/TodoAdd";
 
 export default {
   name: 'App',
   components: {
-    Todos
+    Todos,
+    TodoAdd
+  },
+  methods: {
+    deleteTodo(id){
+      this.todos = this.todos.filter(todo => todo.id != id);
+      this.copyTodos = [ ... this.todos]
+    },
+    addTodo(todo){
+      this.todos.push(todo);
+      this.copyTodos = [ ... this.todos];
+    }
   },
   data(){
     return {

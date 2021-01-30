@@ -8,7 +8,7 @@
         </div>
         
         <div class="todo-actions">
-            <button>Eliminar</button>
+            <button @click="$emit('delete-todo', todo.id)">Eliminar</button>
         </div>
     </div>
 </template>

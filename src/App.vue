@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div id="header"></div>
+  <div class="grid-container">
+    <div id="header" class="header">
+
     <Search v-on:query-change="querySearch"/>
-    <div id="main-container">
+    </div>
+    <div id="main-container" class="body">
       <h2>Todos</h2>
       <TodoAdd v-on:add-todo="addTodo"/>
       <Todos v-bind:todosList="copyTodos" v-on:delete-todo="deleteTodo"/>
@@ -46,7 +48,26 @@ export default {
   data(){
     return {
       todos:[
-        
+        {
+          id: 0,
+          title: 'comprar la cena',
+          completed: false
+        },
+        {
+          id: 1,
+          title: 'Alimentar al perro',
+          completed: true
+        },
+        {
+          id: 2,
+          title: 'Jugar LOL',
+          completed: false
+        },
+        {
+          id: 3,
+          title: 'Terminar tutorial',
+          completed: true
+        }
       ],
       copyTodos:[]
     }
@@ -58,6 +79,20 @@ export default {
 </script>
 
 <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 1.7fr 0.7fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". header header ."
+    ". body body ."
+    ". . . .";
+}
+.header { grid-area: header; }
+.body { grid-area: body; }
+
+
 
 
 *{
